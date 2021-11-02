@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- Bootstrap Date-Picker Plugin -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <meta name="theme-color" content="#fafafa">
+</head>
+<body>
+<!-- main content -->
+<div class="container">
+    <div class="d-flex align-items-center">
+        <h1 class="title">Manager Account</h1>
+        <div class="btn-wrap">
+            <a href="../stats.html" class="btn btn-primary" id="stats">Statistics</a>
+        </div>
+        <div class="btn-wrap">
+            <a onclick="logout()" class="btn btn-secondary" id="logout">Logout</a>
+        </div>
+    </div>
+</div>
+<div class="container white">
+    <div class="row">
+        <div id="input-apply" class="col-4">
+            <form>
+                <div class="form-group">
+                    <label for="input-id">Reimbursement ID</label>
+                    <input type="text" id="input-id" class="form-control" placeholder="Reimbursement ID">
+                </div>
+                <div class="form-group">
+                    <label for="input-amount">Approved/Denied</label>
+                    <select class="form-select" id="input-status" aria-label="select">
+                        <option value="Approved">Approve</option>
+                        <option value="Denied">Deny</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="input-description">Message</label>
+                    <textarea class="form-control" id="input-message" rows="3"></textarea>
+                </div>
+                <div>
+                    <a onclick="approve()" class="btn btn-primary" id="approve">Submit</a>
+                </div>
+            </form>
+        </div>
+        <div id="table-apply" class="col-8">
+            <table class="table" name="managerTable">
+                <thead>
+                <tr>
+                    <th scope="col">Reimbursement ID</th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Expense Date</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody id="manager-reimbursements">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../js/vendor/modernizr-3.11.2.min.js"></script>
+<!-- <script src="js/vendor/modernizr-3.11.2.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+<script src="../js/manager.js"></script>
+</body>
+</html>
